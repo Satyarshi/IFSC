@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "es2016",
+    "jsx": "react-jsx", // or "react" for older versions of React
+    "jsxImportSource": "react", // Required for React 17+ JSX transform
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    /* Modules */
+    "module": "commonjs",
+    "baseUrl": "./src", // Base directory for resolving non-relative module names
+    "paths": {
+      "@/*": ["*"]
+    },
+    "moduleResolution": "node",
+
+    /* Interop Constraints */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Type Checking */
+    "strict": true,
+    "skipLibCheck": true, // Optional: Can help with issues related to library types
+
+    /* Emit */
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "./dist", // Specify the output directory for emitted files
+    "removeComments": true,
+
+    /* JavaScript Support */
+    "allowJs": true,
+
+    /* Optional: Adjust these settings as needed */
+    "noEmit": false,
+    "preserveConstEnums": true
+  },
+  "include": [
+    "src/**/*" // Include all files in the src directory
+  ],
+  "exclude": [
+    "node_modules", // Exclude node_modules
+    "dist" // Exclude the dist directory if it's being used
+  ]
+}

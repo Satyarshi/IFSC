@@ -1,0 +1,218 @@
+body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.container-fluid {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px;
+}
+
+.mainLayout,
+.main {
+  background-color: white;
+  padding: 0;
+  line-height: 1.6;
+  height: auto;
+}
+
+.header {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.logo img {
+  height: 50px;
+}
+
+/* Header Menu */
+.menu-container {
+  display: flex;
+  align-items: center;
+}
+
+.header-menu {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.custom-menu-item {
+  padding: 0 20px;
+  color: #000;
+}
+
+.custom-menu-item a {
+  color: inherit;
+}
+
+.custom-menu-item a:hover {
+  color: #1890ff;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  border: none;
+  background: none;
+  font-size: 24px;
+  color: #000;
+  cursor: pointer;
+}
+
+.ant-btn-primary,
+.ant-layout-header {
+  background-color: white;
+  border: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 1015px) {
+  .menu-container .header-menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Block Styles */
+.heroBlock,
+.hsnInfoBlock,
+.hsnCodeStructureBlock,
+.sacCodeStructureBlock,
+.hsnDeclarationStructureBlock {
+  background: #fff;
+  padding: 20px 0;
+  margin-bottom: 0;
+}
+
+.textHolder {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+h1,
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #9092a3;
+}
+
+ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+/* Specific Elements */
+.searchBoxWrapper {
+  text-align: center;
+  padding: 0 15px;
+}
+
+.ant-input-outlined {
+  width: 100%;
+  max-width: 730px;
+}
+/* Styling the search button */
+.ant-input-group-wrapper {
+  width: 800px;
+}
+@media (max-width: 1200px) {
+  .ant-input-group-wrapper {
+    max-width: 750px;
+    transform: translate(-4%, 0);
+  }
+}
+@media (max-width: 820px) {
+  .ant-input-group-wrapper {
+    max-width: 650px;
+  }
+}
+@media (max-width: 720px) {
+  .ant-input-group-wrapper {
+    max-width: 560px;
+  }
+}
+@media (max-width: 624px) {
+  .ant-input-group-wrapper {
+    max-width: 460px;
+  }
+}
+@media (max-width: 515px) {
+  .ant-input-group-wrapper {
+    max-width: 360px;
+  }
+}
+@media (max-width: 515px) {
+  .ant-input-group-wrapper {
+    width: 300px;
+  }
+}
+
+/* Styling the search button */
+.ant-input-search-button {
+  background-color: #1890ff;
+  color: white;
+  border-color: #1890ff;
+}
+
+.ant-input-search-button:hover {
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+  color: white;
+}
+
+.videoHolder,
+.hsnCodeExample,
+.sacCodeExample {
+  text-align: center;
+  margin: 15px 0;
+}
+.rounded-video {
+  border-radius: 15px; 
+  overflow: hidden; 
+}
+
+.hsnInfoBlock .rounded-video img {
+  border-radius: 15px; 
+}
+
+.playIcon {
+  font-size: 48px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hsnDeclarationStructureBlock .ant-card {
+  background-color: rgba(239, 254, 255, 1);
+  border-radius: 8px;
+  padding: 15px;
+  margin: 20px 0;
+  border: 2px solid rgba(34, 211, 238, 1);
+}
+
+.hsnDeclarationStructureBlock .ant-card p {
+  font-size: 16px;
+  color: #656565;
+  margin: 0;
+}
