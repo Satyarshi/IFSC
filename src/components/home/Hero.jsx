@@ -5,9 +5,10 @@ const Hero = () => {
     <div id="hero" className="heroBlock">
       <div className="container-fluid">
         <div className="textHolder">
-          <h1>Quickly Access HSN & SSC Code Details at Your Fingertips</h1>
+          <h1>Introduction to IFSC Code System</h1>
           <p>
-            Search by HSN or SSC code or any keyword to get comprehensive information.
+            Easily search for bank details using IFSC codes or branch names to
+            ensure smooth transactions and accurate information.
           </p>
         </div>
       </div>
