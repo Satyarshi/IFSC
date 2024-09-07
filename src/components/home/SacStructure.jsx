@@ -16,7 +16,7 @@ const SacStructure = () => (
 
         <div className="sacCodeExample">
           <img
-            src="src/assets/sac infographics.png"
+            src="public/assets/sac infographics.png"
             alt="SAC Code Structure Example"
             style={{ width: "100%", borderRadius: "8px" }}
           />

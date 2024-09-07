@@ -24,7 +24,7 @@ const HsnStructure = () => (
 
         <div className="hsnCodeExample">
           <img
-            src="src/assets/hsn infographic.png"
+            src="public/assets/hsn infographic.png"
             alt="HSN Code Structure Example"
             style={{ width: "100%", borderRadius: "8px" }}
           />
