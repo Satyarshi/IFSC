@@ -7,8 +7,10 @@ const Hero = () => {
         <div className="textHolder">
           <h1>Introduction to IFSC Code System</h1>
           <p>
-            Easily search for bank details using IFSC codes or branch names to
-            ensure smooth transactions and accurate information.
+            <span className="para">
+              Easily search for bank details using IFSC codes or branch names to
+              ensure smooth transactions and accurate information.
+            </span>
           </p>
         </div>
       </div>

@@ -32,19 +32,32 @@ body {
   height: 50px;
 }
 
+.logo {
+  height: 45px;
+}
+
+@media (max-width: 1015px) {
+  .logo img {
+    margin-top: 7px;
+  }
+}
+
 /* Header Menu */
 .menu-container {
   display: flex;
   align-items: center;
 }
+
 .header-menu {
   display: flex;
   align-items: center;
   font-weight: bold;
 }
+
 #hero {
   padding-top: 100px;
 }
+
 .custom-menu-item {
   padding: 0 20px;
   color: #000;
@@ -85,25 +98,14 @@ body {
   }
 }
 
-body {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #333;
-  overflow-x: hidden;
-}
-
-.container-fluid {
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 0 15px;
-}
-
-.ifscInfoBlock {
+.ifscInfoBlock,
+.ifscCodeStructureBlock {
   background: #fff;
   padding: 20px 0;
 }
 
-.ifscInfoBlock h2 {
+.ifscInfoBlock h2,
+.ifscCodeStructureBlock h2 {
   font-size: 30px;
   font-weight: 600;
   margin-bottom: 25px;
@@ -111,12 +113,15 @@ body {
 }
 
 .ifscInfoBlock p,
-.ifscInfoBlock ul {
+.ifscCodeStructureBlock p,
+.ifscInfoBlock ul,
+.ifscCodeStructureBlock ul {
   font-size: 16px;
   color: #9092a3;
 }
 
-.ifscInfoBlock ul {
+.ifscInfoBlock ul,
+.ifscCodeStructureBlock ul {
   padding-left: 30px;
 }
 
@@ -148,32 +153,10 @@ body {
   }
 }
 
-.rounded-video {
-  border-radius: 15px;
-  overflow: hidden;
-}
+.rounded-video,
 .rounded-video img {
   border-radius: 15px;
-}
-.ifscCodeStructureBlock {
-  background: #fff;
-}
-
-.ifscCodeStructureBlock h2 {
-  font-size: 30px;
-  font-weight: 600;
-  margin-bottom: 25px;
-  color: #333;
-}
-
-.ifscCodeStructureBlock p,
-.ifscCodeStructureBlock ul {
-  font-size: 16px;
-  color: #9092a3;
-}
-
-.ifscCodeStructureBlock ul {
-  padding-left: 30px;
+  overflow: hidden;
 }
 
 .ifscImageHolder {
@@ -252,4 +235,52 @@ ul {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.responsiveContainer {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 723px) {
+  .responsiveContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .responsiveContainer .ant-select,
+  .responsiveContainer .ant-input {
+    width: 100% !important;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 428px) {
+  .responsiveContainer {
+    align-items: flex-start;
+  }
+}
+
+.ant-tabs-content-holder {
+  margin-top: 10px;
+}
+
+/* Adjust font size for mobile screens */
+@media (max-width: 1000px) {
+  .ifscCodeStructureBlock p.ant-typography,
+  .ifscCodeStructureBlock ul,
+  .ifscCodeStructureBlock ol,
+  .ifscInfoBlock p.ant-typography,
+  .ifscInfoBlock ul,
+  .ifscInfoBlock ol,
+  .para {
+    font-size: 28px !important;
+    line-height: 1.2;
+  }
+  .ifscInfoBlock h2,
+  .heroBlock h1 {
+    font-size: 40px;
+  }
 }

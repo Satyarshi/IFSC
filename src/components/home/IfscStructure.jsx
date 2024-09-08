@@ -11,7 +11,9 @@ const IfscStructure = () => (
           Why is IFSC Code Important?
         </Title>
         <Paragraph style={{ fontSize: "16px", color: "#9092A3" }}>
-          The IFSC code system plays a vital role in:
+          <span className="para">
+            The IFSC code system plays a vital role in:
+          </span>
         </Paragraph>
         <ul style={{ fontSize: "16px", color: "#9092A3", paddingLeft: "30px" }}>
           <li>
@@ -33,10 +35,12 @@ const IfscStructure = () => (
           Understanding IFSC Code Structure
         </Title>
         <Paragraph style={{ fontSize: "16px", color: "#9092A3" }}>
-          The Indian Financial System Code (IFSC) is a unique identifier
-          assigned to each bank branch in India, facilitating electronic funds
-          transfer and other banking operations. Here’s a breakdown of the IFSC
-          code structure:
+          <span className="para">
+            The Indian Financial System Code (IFSC) is a unique identifier
+            assigned to each bank branch in India, facilitating electronic funds
+            transfer and other banking operations. Here’s a breakdown of the
+            IFSC code structure:
+          </span>
         </Paragraph>
 
         {/* Display Image */}
@@ -54,8 +58,10 @@ const IfscStructure = () => (
 
         {/* Description of Code Breakdown */}
         <Paragraph style={{ fontSize: "16px", color: "#9092A3" }}>
-          An IFSC code is an 11-character alphanumeric code, structured as
-          follows:
+          <span className="para">
+            An IFSC code is an 11-character alphanumeric code, structured as
+            follows:
+          </span>
         </Paragraph>
         <ol style={{ fontSize: "16px", color: "#9092A3" }}>
           <li>
@@ -103,7 +109,9 @@ const IfscStructure = () => (
         <Paragraph
           style={{ fontSize: "16px", color: "#9092A3", marginBottom: "0px" }}
         >
-          Let’s break down an example IFSC code: HDFC0001234
+          <span className="para">
+            Let’s break down an example IFSC code: HDFC0001234
+          </span>
         </Paragraph>
         <ul style={{ fontSize: "16px", color: "#9092A3", paddingLeft: "30px" }}>
           <li>HDFC: Bank Identifier - This represents HDFC Bank.</li>
