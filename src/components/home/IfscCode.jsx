@@ -37,7 +37,7 @@ const IfscCode = () => {
     try {
       let response;
       if (searchOption === "Search by Bank and Branch Name") {
-        response = await axios.get("/api/banks", {
+        response = await axios.get("https://nemesis.pythonanywhere.com/banks", {
           params: {
             bank: bank,
             branch: branch,
