@@ -3,9 +3,12 @@ import { Tabs, Input, Select, Button, Dropdown } from "antd";
 
 const { Search } = Input;
 
-const SearchTabs = ({ onSearchOptionChange }) => {
+const SearchTabs = ({ onSearchOptionChange, onSearch }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 428);
   const [activeKey, setActiveKey] = useState("1");
+  const [bankName, setBankName] = useState("");
+  const [branchName, setBranchName] = useState("");
+  const [ifscCode, setIfscCode] = useState("");
 
   useEffect(() => {
     const handleResize = () => {
@@ -23,21 +26,27 @@ const SearchTabs = ({ onSearchOptionChange }) => {
   const handleTabChange = (key) => {
     setActiveKey(key);
     onSearchOptionChange(
-      key === "1" ? "Search by IFSC Code" : "Search by Bank and Branch Name"
+      key === "1" ? "Search by Bank and Branch Name" : "Search by IFSC Code"
     );
   };
-
+  const handleSearchSubmit = () => {
+    if (activeKey === "1") {
+      onSearch({ bank: bankName, branch: branchName });
+    } else {
+      onSearch({ ifsc_code: ifscCode });
+    }
+  };
   const handleMenuClick = (e) => {
     handleTabChange(e.key);
   };
 
   const dropdownItems = [
     {
-      label: "Search by IFSC Code",
+      label: "Search by Bank and Branch Name",
       key: "1",
     },
     {
-      label: "Search by Bank and Branch Name",
+      label: "Search by IFSC Code",
       key: "2",
     },
   ];
@@ -50,24 +59,6 @@ const SearchTabs = ({ onSearchOptionChange }) => {
   const items = [
     {
       key: "1",
-      label: "Search by IFSC Code",
-      children: (
-        <Search
-          placeholder="Enter IFSC Code"
-          allowClear
-          enterButton="Search"
-          size="large"
-          style={{
-            width: "100%",
-            maxWidth: "900px",
-            paddingLeft: "0px",
-            fontWeight: "500",
-          }}
-        />
-      ),
-    },
-    {
-      key: "2",
       label: "Search by Bank and Branch Name",
       children: (
         <div
@@ -87,28 +78,52 @@ const SearchTabs = ({ onSearchOptionChange }) => {
             }}
             showSearch
             placeholder="Select Bank Name"
+            onChange={(value) => setBankName(value)}
             filterOption={(input, option) =>
               (option?.label ?? "").toLowerCase().includes(input.toLowerCase())
             }
             options={[
-              { value: "1", label: "State Bank of India" },
-              { value: "2", label: "HDFC Bank" },
-              { value: "3", label: "Bank of Baroda" },
+              { value: "State Bank of India", label: "State Bank of India" },
+              { value: "HDFC Bank", label: "HDFC Bank" },
+              { value: "Bank of Baroda", label: "Bank of Baroda" },
             ]}
           />
           <Input
             style={{ width: "35%", fontWeight: "500", height: "40px" }}
             placeholder="Enter Branch Name"
+            onChange={(e) => setBranchName(e.target.value)}
           />
           <Button
             type="primary"
             htmlType="submit"
             size="large"
             style={{ backgroundColor: "#1677ff" }}
+            onClick={handleSearchSubmit}
           >
             Submit
           </Button>
         </div>
+      ),
+    },
+    {
+      key: "2",
+      label: "Search by IFSC Code",
+      children: (
+        <Search
+          placeholder="Enter IFSC Code"
+          allowClear
+          enterButton="Search"
+          size="large"
+          style={{
+            width: "100%",
+            maxWidth: "900px",
+            paddingLeft: "0px",
+            fontWeight: "500",
+          }}
+          value={ifscCode}
+          onChange={(e) => setIfscCode(e.target.value)}
+          onSearch={handleSearchSubmit}
+        />
       ),
     },
   ];
@@ -116,7 +131,7 @@ const SearchTabs = ({ onSearchOptionChange }) => {
   return isMobile ? (
     <>
       <Dropdown.Button menu={menuProps} placement="bottomCenter">
-      <span style={{ fontWeight: 500 }}>
+        <span style={{ fontWeight: 500 }}>
           {dropdownItems.find((item) => item.key === activeKey)?.label}
         </span>
       </Dropdown.Button>

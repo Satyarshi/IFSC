@@ -284,3 +284,15 @@ ul {
     font-size: 40px;
   }
 }
+.ant-table-thead > tr > th {
+  color: #89888e !important;
+  font-weight: bold;
+}
+.ifsc-code {
+  color: #191632 !important;
+  font-weight: 500;
+}
+.bank,
+.branch {
+  color: #747474 !important;
+}
