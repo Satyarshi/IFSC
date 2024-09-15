@@ -8,9 +8,7 @@ import IfscTable from "../common/IfscTable";
 import { Spin, Alert } from "antd";
 
 const IfscCode = () => {
-  const [searchOption, setSearchOption] = useState(
-    "Search by Bank and Branch Name"
-  );
+  const [searchOption, setSearchOption] = useState("Search by Bank and Branch Name");
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -37,7 +35,7 @@ const IfscCode = () => {
     try {
       let response;
       if (searchOption === "Search by Bank and Branch Name") {
-        response = await axios.get("/api/banks", {
+        response = await axios.get(`${import.meta.env.VITE_API_URL}/banks`, {
           params: {
             bank: bank,
             branch: branch,
@@ -46,20 +44,24 @@ const IfscCode = () => {
         if (response.data && response.data.length > 0) {
           setSearchResults(response.data);
         } else {
-          setError("An error occurred while fetching the data.");
+          setError("No results found for the provided bank and branch.");
         }
       } else if (searchOption === "Search by IFSC Code") {
-        response = await axios.get(`ifsccode/${ifsc_code}`);
+        response = await axios.get(`${import.meta.env.VITE_RAZORPAY_API_URL}/${ifsc_code}`);
         const data = response.data;
-        setSearchResults([
-          {
-            bank: data.BANK,
-            branch: data.BRANCH,
-            ifsc: data.IFSC,
-            address: data.ADDRESS,
-            contact: data.CONTACT,
-          },
-        ]);
+        if (data) {
+          setSearchResults([
+            {
+              bank: data.BANK,
+              branch: data.BRANCH,
+              ifsc: data.IFSC,
+              address: data.ADDRESS,
+              contact: data.CONTACT,
+            },
+          ]);
+        } else {
+          setError("No results found for the provided IFSC code.");
+        }
       }
     } catch (error) {
       console.error(error); // Log error details
